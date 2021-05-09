@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Detail produktu {% endblock %}
+
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="info p-5 round">
+        <div class="center">
+            <img src="{{ product.img.url }}" class="img-fluid">
+        </div>
+        <h3 class="">{{ product.name }} <small>(1{{ product.measure }})</small></h3>
+        <div>
+            Cena: {{ product.price }} Kč
+        </div>
+        <div>
+            Druh: {{ product.type }}
+        </div>
+        <div>
+            <button class="btn btn-success dark" disabled>{{ product.mark }}</button>
+        </div>
+        <div class="description mt-5">
+            {{ product.description }}
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

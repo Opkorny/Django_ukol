@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="info round">
+    <div class="p-5 center">
+        <h1>Jste si jistí?</h1>
+        <p>Opravdu chcete odstranit produkt - {{ product.name }} - ze seznamu?</p>
+        <div class="center">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <a class="btn btn-warning" href="{%url 'detail' product.pk%}" role="button">Ne</a>
+                <input class="btn btn-danger" type="submit" value="Ano">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

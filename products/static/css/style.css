@@ -1,0 +1,128 @@
+:root {
+    --light: #f9f9f9;
+    --dark: #343434;
+}
+
+h1 a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1 a:hover{
+    color: inherit;
+}
+
+h2 a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h2 a:hover{
+    color: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url(background.jpg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    margin-top: auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--light) !important;
+    background-color: var(--dark) !important;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+    bottom: .5em;
+}
+
+table {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
+}
+
+tbody * {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
+    text-decoration: inherit;
+}
+
+.dark {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
+}
+
+.dataTables_filter, .dataTables_info {
+    display: none;
+}
+
+.tablecenter{
+    text-align: center;
+}
+
+table{
+    width: 80% !important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border-bottom: none !important;
+}
+
+.space{
+    padding: 0;
+    margin-bottom: 100px!important;
+}
+
+.info{
+    overflow: hidden;
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
+}
+
+.info div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.description{
+    margin-bottom: 70px;
+}
+
+h2{
+    margin: 10px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-size: 3em !important;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.round {
+  border-radius: 50px;
+}
+
+.akce {
+    font-size: 1.5em;
+    color: #FA981E !important;
+}

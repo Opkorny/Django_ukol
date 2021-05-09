@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Detail produktu {% endblock %}
+
+{% load static %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="info p-5 round">
+        <a class="btn btn-success" href="{%url 'list'%}" role="button">Zpět</a>
+        {% if product.img %}
+        <div class="center">
+            <img src="{{ product.img.url }}" class="img-fluid">
+        </div>
+        {% endif %}
+        <h3 class="">{{ product.name }} <small>(1{{ product.measure }})</small></h3>
+        {% if product.akce %}
+            <div class="akce">
+                <i>AKCE!!!</i>
+            </div>
+        {% endif %}
+        <div>
+            Cena: {{ product.price }} Kč
+        </div>
+        <div>
+            Druh: {{ product.type }}
+        </div>
+        <div>
+            <button class="btn btn-success dark" disabled>{{ product.mark }}</button>
+        </div>
+        <div class="description mt-5">
+            {{ product.description }}
+        </div>
+        <div>
+            <a class="btn btn-warning" href="{% url 'product-update' product.pk %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'product-delete' product.pk %}">Delete</a>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

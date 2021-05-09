@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Seznam produktů {% endblock %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+{% endblock %}
+
+{% block content %}
+<div class="space"></div>
+<table class="tablecenter">
+    <thead>
+    <tr>
+        <th>Produkt</th>
+        <th>Druh</th>
+        <th>Cena</th>
+        <th>Akce</th>
+        <th>Označení</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in products %}
+    <tr>
+        <td><a href="{% url 'detail' p.pk %}">{{ p.name }}</a></td>
+        <td>{{ p.type }}</td>
+        <td><span>{{ p.price }}</span> Kč/{{ p.measure }}</td>
+        <td>{% if p.akce %}*{% endif %}</td>
+        <td><button class="btn btn-success dark" disabled>{{ p.mark }}</button></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <a class="btn btn-success" href="{% url 'product-create' %}">Přidat produkt</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="space"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script src="{% static 'js/sort.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
